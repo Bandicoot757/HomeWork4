@@ -10,9 +10,16 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    weak var coordinator: ProfileCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(ProfileHeaderView.self, forHeaderFooterViewReuseIdentifier: "sectionHeader")
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        coordinator?.didFinish()
     }
     
     lazy var tableView: UITableView = {
@@ -87,9 +94,8 @@ extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let destenationVC = storyBoard.instantiateViewController(withIdentifier: "PhotosVC")
-            self.navigationController?.pushViewController(destenationVC, animated: true)
+
+            coordinator?.openPhotos()
     
         }
     }

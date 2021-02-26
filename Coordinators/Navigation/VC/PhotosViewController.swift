@@ -10,9 +10,10 @@ import UIKit
 
 final class PhotosViewController: UIViewController, UICollectionViewDelegate {
     
+    weak var coordinator: PhotosCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     private lazy var collectionView: UICollectionView = {

@@ -9,6 +9,8 @@
 import UIKit
 
 class LoginViewController: UIViewController, UIScrollViewDelegate {
+    
+    weak var coordinator: MainCoordinator?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,9 +111,16 @@ class LoginViewController: UIViewController, UIScrollViewDelegate {
     }()
     
     @objc func loginButtonTapped() {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let destenationVC = sb.instantiateViewController(withIdentifier: "ProfileVC")
-        self.show(destenationVC, sender: self)
+        
+        coordinator?.openProfile()
+
+        
+//        let profileVC = ProfileViewController()
+//        self.navigationController?.pushViewController(profileVC, animated: true)
+        
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let destenationVC = sb.instantiateViewController(withIdentifier: "ProfileVC")
+//        self.show(destenationVC, sender: self)
     }
     
     override func viewWillLayoutSubviews() {
