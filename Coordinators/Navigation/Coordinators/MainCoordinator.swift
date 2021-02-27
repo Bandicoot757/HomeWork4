@@ -20,7 +20,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let loginVC = LoginViewController()
         loginVC.coordinator = self
-        loginVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+        loginVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Person"), tag: 1)
         navigationController.pushViewController(loginVC, animated: false)
     }
     

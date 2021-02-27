@@ -21,16 +21,6 @@ class TabBarController: UITabBarController {
         feedCoordinator.start()
         
         viewControllers = [feedCoordinator.navigationController, mainCoordinator.navigationController]
-        
-//        let firstViewController = FeedViewController()
-//        firstViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Home"), tag: 0)
-//
-//        let secondViewController = LoginViewController()
-//        secondViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Person"), tag: 1)
-//
-//        let tabBarList = [firstViewController, secondViewController]
-//
-//        viewControllers = tabBarList
-        
+    
     }
 }

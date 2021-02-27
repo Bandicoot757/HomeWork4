@@ -18,13 +18,6 @@ final class FeedViewController: UIViewController {
         print(type(of: self), #function)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "post" else {
-            return
-        }
-        guard let postViewController = segue.destination as? PostViewController else {
-            return
-        }
+    // Open post is not implemented now
 
-    }
 }
